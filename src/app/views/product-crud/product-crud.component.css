@@ -1,0 +1,8 @@
+div{
+    display: flex;
+    justify-content: right;
+}
+
+button{
+    margin-right: 30px;
+}
