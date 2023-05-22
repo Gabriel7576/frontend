@@ -10,3 +10,10 @@
     font-size: 1.1rem;
     font-weight: 300;
 }
+
+.default{
+    text-decoration: none;
+}
+.default:visited{
+    color: black;
+}

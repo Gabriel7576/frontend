@@ -1,0 +1,22 @@
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 0px 2%;
+}
+
+div{
+    display: flex;
+}
+
+button{
+    margin: 10px 15px 15px 5px;
+}
+
+mat-form-field{
+        width: 98%;
+}
+
+.title{
+    margin-top: 2px;
+    margin-left: 5px;
+}

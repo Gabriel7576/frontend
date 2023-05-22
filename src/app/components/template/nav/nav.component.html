@@ -1,19 +1,21 @@
 <mat-sidenav-container class="container">
-    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+    <mat-sidenav class="sidenav" mode="over" [opened]="opened" fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
-            <a class="list-item" mat-list-item routerLink="">
+            <a class="list-item" mat-list-item routerLink="" (click)="nav.open()">
                 <mat-icon>home</mat-icon>
                 Início
             </a>
-            <a class="list-item" mat-list-item routerLink="products">
+            <a class="list-item" mat-list-item routerLink="products" (click)="nav.open()">
                 <mat-icon>storefront</mat-icon>
                 Produtos
             </a>
         </mat-nav-list>
     </mat-sidenav>
-    
-        <mat-card-content class="content">
-            <router-outlet></router-outlet>
-        </mat-card-content>
-
+    <mat-card-content>
+        <div class="content">
+            <div class="content-router">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-card-content>
 </mat-sidenav-container>

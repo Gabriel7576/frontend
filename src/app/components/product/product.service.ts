@@ -2,7 +2,6 @@ import { Product } from './product.component';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  baseUrl = "http://localhost:3001/products"
+  baseUrl = "http://10.100.0.125:3001/products"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -30,5 +29,20 @@ export class ProductService {
 
   read(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl);
+  }
+
+  readById(id: string): Observable<Product> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Product>(url);
+  }
+
+  update(product: Product): Observable<Product> {
+    const url = `${this.baseUrl}/${product.id}`;
+    return this.http.put<Product>(url, product);
+  }
+
+  delete(id: string): Observable<Product> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete<Product>(url);
   }
 }

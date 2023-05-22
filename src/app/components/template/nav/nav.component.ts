@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavService } from './nav.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+  public opened: boolean = false;
+
+  constructor(public nav: NavService) {
+    this.nav.menu().subscribe(b => {
+      this.opened = b;
+    })
+  }
 }

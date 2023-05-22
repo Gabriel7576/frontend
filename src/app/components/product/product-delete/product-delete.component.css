@@ -1,0 +1,9 @@
+mat-card{
+    width: 50%;
+    height: 50%;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+}
